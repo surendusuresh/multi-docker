@@ -12,7 +12,7 @@ after_success:
  - docker build -t surendusuresh/multi-client ./client
  - docker build -t surendusuresh/multi-nginx ./nginx
  - docker build -t surendusuresh/multi-server ./server
- - docker build -t surendusuresh/mutli-worker ./worker
+ - docker build -t surendusuresh/multi-worker ./worker
 
  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
  - docker push surendusuresh/multi-client
