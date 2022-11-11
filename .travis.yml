@@ -13,3 +13,9 @@ after_success:
  - docker build -t surendusuresh/multi-nginx ./nginx
  - docker build -t surendusuresh/multi-server ./server
  - docker build -t surendusuresh/mutli-worker ./worker
+
+ - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+ - docker push surendusuresh/multi-client
+ - docker push surendusuresh/multi-nginx
+ - docker push surendusuresh/multi-server
+ - docker push surendusuresh/multi-worker
